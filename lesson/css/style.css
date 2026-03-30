@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+  --Green-100: hsl(75, 94%, 57%);
+  --White-100: hsl(0, 0%, 100%);
+  --Grey-700: hsl(0, 0%, 20%);
+  --Grey-800: hsl(0, 0%, 12%);
+  --Grey-900: hsl(0, 0%, 8%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 14px;
+  font-style: normal;
+}
+.container {
+  margin: 0;
+  background-color: var(--Grey-900);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .profile-contant {
+    background-color: var(--Grey-800);
+    width: 380px;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    img {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 24px;
+    }
+  }
+  .profile-name {
+    color: var(--White-100);
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0 0 24px;
+  }
+  .profile-location {
+    color: var(--Green-100);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 24px;
+  }
+  .profile-bio {
+    color: var(--White-100);
+    font-size: 14px;
+    font-style: normal;
+    margin: 0 0 32px;
+  }
+  .social-link {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    a {
+      display: block;
+      background-color: var(--Grey-700);
+      color: var(--White-100);
+      padding: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+    .link-item:hover {
+      background-color: var(--Green-100);
+      color: #141414;
+    }
+  }
+}
