@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+      body {
+        background-color: #0f3854;
+        background-image: radial-gradient(#0a2e46 0%, #000000 100%);
+        color: #daf6ff;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-shadow:
+          0 0 20px rgba(10, 175, 230, 1),
+          0 0 20px rgba(10, 175, 230, 0);
+      }
+
+      .clock-container {
+        border: 2px solid #0a2e46;
+        padding: 30px 50px;
+        border-radius: 15px;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+        text-align: center;
+        min-width: 300px;
+      }
+
+      h2#time {
+        font-size: 60px;
+        margin: 0;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      p#date {
+        font-size: 20px;
+        color: #88c0d0;
+        margin: 15px 0 0 0;
+        letter-spacing: 1px;
+      }
+
+
+
+      button {
+        margin-top: 25px;
+        padding: 10px 25px;
+        font-size: 16px;
+        background: transparent;
+        color: #ff5555;
+        border: 2px solid #ff5555;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-shadow: none;
+      }
+
+      
+
+      button:hover {
+        background: #ff5555;
+        color: white;
+        box-shadow: 0 0 15px rgba(255, 85, 85, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock-container">
+      <h2 id="time"></h2>
+      <p id="date"></p>
+      <button onclick="clearInterval(myTime)">Stop</button>
+    </div>
+    <script>
+      let myTime = setInterval(myClock, 1000);
+
+      function myClock() {
+        let time = document.getElementById("time");
+        let date = document.getElementById("date");
+
+        let currentTime = new Date();
+        let day = currentTime.getDay();
+        switch (day) {
+          case 0:
+            day = "Sunday";
+            break;
+          case 1:
+            day = "Monday";
+            break;
+
+          default:
+            day = "Other day";
+            break;
+        }
+        console.log(day);
+
+        time.innerHTML = currentTime.toLocaleTimeString();
+        date.innerHTML = `${day}, ${currentTime.toLocaleDateString()}`;
+      }
+    </script>
+  </body>
+</html>
