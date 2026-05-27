@@ -152,35 +152,47 @@ footer {
   nav {
     flex-direction: column;
     gap: 20px;
+    align-items: center;
   }
 
   nav ul {
     flex-direction: column;
     align-items: center;
+    display: flex;
+    gap: 15px;
   }
 
   #home {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
-    gap: 50px;
-    padding-top: 120px;
+    gap: 40px;
+    padding: 120px 5% 60px;
+    justify-content: center;
+    overflow: hidden;
   }
-
+.home-text{
+    width: 100%;
+}
   .home-text h1 {
-    font-size: 40px;
+    font-size: 42px;
   }
 
   .home-text hr {
-    width: 200px;
+    width: 180px;
     margin: 20px auto;
   }
 
   .home-text p {
     font-size: 22px;
   }
-
+.home-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
   .home-image img {
-    width: 250px;
+    width: 220px;
+    max-width: 100%;
   }
 
   section {
