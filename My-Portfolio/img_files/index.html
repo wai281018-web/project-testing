@@ -14,32 +14,40 @@
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#skill">Skill</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+         
         </ul>
       </nav>
     </header>
-
     <section id="home">
       <div class="home-text">
-        <h1>Hello, I'm Phyoe</h1>
-        <hr />
-        <p>Web Developer</p>
-
-        <button>Hire Me</button>
+        <h1>Hi, I'm Phyoe</h1>
+        <p class="typing-text">Junior Frontend Developer</p>
+        <button onclick="window.location.href='mailto:wai281018@gmail.com'">Hire Me</button>
       </div>
 
       <div class="home-image">
-        <img src="img2.jpg" alt="Phyoe's Avatar" />
+        <img src="img3.jpg" alt="My Photo" />
       </div>
     </section>
-
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I am learning web development. I enjoy building simple and clean
-        websites using HTML and CSS.
+        I am a Junior Frontend Developer with a strong interest in building
+        clean, responsive, and user-friendly websites. I focus on turning simple
+        ideas into functional and visually appealing web interfaces using HTML,
+        CSS, and basic JavaScript. I enjoy learning by building real projects
+        and continuously improving my frontend development skills.
+      </p>
+      <br />
+      <p>
+        I pay close attention to layout structure, responsiveness, and overall
+        design quality to ensure a smooth experience across all devices. I am
+        committed, detail-oriented, and responsible in my work, and I aim to
+        deliver reliable results that meet expectations. I am open to
+        opportunities where I can contribute, grow, and improve as a developer.
       </p>
     </section>
 
@@ -48,7 +56,10 @@
       <ul>
         <li>HTML</li>
         <li>CSS</li>
-        <li>Basic JavaScript</li>
+        <li>JavaScript</li>
+        <li>Responsive Design</li>
+        <li>Git</li>
+        <li>GitHub</li>
       </ul>
     </section>
 
@@ -108,13 +119,68 @@
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: wai281018@gmail.com</p>
-      <p>GitHub: github.com/waiphyoe</p>
-    </section>
+  <h2>Contact</h2>
+
+  <div class="contact-container">
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:wai281018@gmail.com">
+          wai281018@gmail.com
+        </a>
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <h3>GitHub</h3>
+      <p>
+        <a href="https://github.com/wai281018-web" target="_blank">
+          github.com/wai281018-web
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
 
     <footer>
-      <p>@ 2026 My Portfolio</p>
+      <p>@ 2026 Phyoe. All Rights Reserved.</p>
     </footer>
+
+    <script>
+      const texts = [
+        "Junior Frontend Developer",
+        "Frontend Enthusiast",
+        "Responsive Web Designer",
+      ];
+
+      let count = 0;
+      let index = 0;
+      let currentText = "";
+      let letter = "";
+
+      function type() {
+        if (count === texts.length) {
+          count = 0;
+        }
+
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+
+        document.querySelector(".typing-text").textContent = letter;
+
+        if (letter.length === currentText.length) {
+          count++;
+          index = 0;
+
+          setTimeout(type, 1200);
+        } else {
+          setTimeout(type, 100);
+        }
+      }
+
+      type();
+
+
+    </script>
   </body>
 </html>
